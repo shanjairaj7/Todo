@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo-List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="inputContainer">
+    <input type="text" placeholder="Enter your to-do">
+    <button class="addTodo">+</button>
+  </nav>
+  <div class="todos">
+    <!-- <div class="todo">
+      <h4>Make money</h4>
+      <button class="removeTodo">Remove</button>
+      <button class="editTodo">Edit</button>
+    </div> -->
+  </div>
+<script>
+  var todosParent = document.querySelector('.todos');
+  var todoInput = document.querySelector('.inputContainer input');
+  var addTodo = document.querySelector('.addTodo');
+  var inputContainer = document.querySelector('.inputContainer');
+
+  addTodo.addEventListener('click', todoFunction);
+
+  function todoFunction(){
+
+    var todo = document.createElement('div');
+    todo.setAttribute('class','todo');
+    todosParent.appendChild(todo);
+
+    var todoTitle = document.createElement('h4');
+    todoTitle.innerHTML = todoInput.value;
+    todo.appendChild(todoTitle);
+
+    var removeTodo = document.createElement('button');
+    removeTodo.setAttribute('class','removeTodo');
+    removeTodo.innerHTML ="Remove";
+    todo.appendChild(removeTodo);
+
+    var editTodo = document.createElement('button');
+    editTodo.setAttribute('class','editTodo');
+    editTodo.innerHTML = "Edit";
+    todo.appendChild(editTodo);
+
+    todoInput.value = "";
+
+    removeTodo.addEventListener('click', function(e){
+      var target = e.target.parentNode;
+      target.remove();
+    })
+
+    editTodo.addEventListener('click',function(b){
+      var targetText = b.target.parentNode.childNodes[0].innerHTML;
+      todoInput.value = targetText;
+
+      var updateTodo = document.createElement('button');
+      updateTodo.setAttribute('class','updateTodo');
+      updateTodo.innerHTML = "Update";
+      inputContainer.appendChild(updateTodo);
+
+      addTodo.style.display = 'none';
+
+      updateTodo.addEventListener('click',function(){
+        var updateTitle = todoInput.value;
+        var targetName = b.target.parentNode.childNodes[0];
+        targetName.innerHTML = updateTitle;
+
+        todoInput.value = "";
+      })
+    })
+  }
+</script>
+</body>
+</html>

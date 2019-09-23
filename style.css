@@ -1,0 +1,100 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body{
+  font-family: "Montserrat",sans-serif;
+}
+
+input{
+  font-family:  "Montserrat",sans-serif;
+}
+
+.inputContainer{
+  display: flex;
+  background: #d3002e;
+}
+
+.inputContainer input,.inputContainer button{
+  margin: 20px;
+}
+
+.inputContainer input{
+  width: 90%;
+  padding: 15px 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 17px;
+  background: rgba(255, 255, 255, 0.342);
+  font-weight: bold;
+  color: white;
+}
+
+.inputContainer .addTodo{
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.342);
+  margin-left: 10px;
+  border: none;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.removeTodo{
+  padding: 5px 10px;
+  background: rgb(255, 0, 43);
+  font-family: "Montserrat",sans-serif;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.editTodo{
+  padding: 5px 10px;
+  background: rgb(4, 0, 255);
+  font-family: "Montserrat",sans-serif;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.todos{
+  margin: 30px;
+}
+
+.todo{
+  display: flex;
+  margin: 30px 0;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.061);
+  height: 70px;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.todo h4{
+  width: 70%;
+}
+
+.updateTodo{
+  padding: 0 10px;
+  background: rgba(255, 255, 255, 0.342);
+  border: none;
+  color: white;
+  font-family: "Montserrat",sans-serif;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
